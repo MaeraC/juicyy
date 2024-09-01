@@ -1,13 +1,341 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body, html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Roboto";
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+ul, li {
+  list-style: none;
+}
+.button {
+  padding: 15px 20px;
+  font-size: 16px;
+  font-family: "Roboto";
+  text-transform: uppercase;
+  border: white 2px solid;
+  color: white;
+  background: #00000017;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.button:hover {
+  transform: scale(1.05);
+  background: #00000049;
+}
+
+
+
+/** HERO SECTION **/
+ 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  padding-right: 20px;
+  color: white;
+  position: absolute;
+  width: 100%;
+}
+header img {
+  width: 100px;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  margin: 0 20px;
+  text-transform: uppercase;
+  font-family: "Roboto";
+  font-weight: 500;
+}
+
+
+/** HERO SECTION **/
+
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: url(assets/1.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
+.hero-section .txt {
+  width: 50%;
+  padding: 0 100px;
+}
+.hero-section .slogan {
+  font-size: 70px;
+  font-family: "Playfair Display";
+  font-weight: bold;
+  color: white;
+  margin-bottom: 30px;
+}
+.hero-section .prg {
+  line-height: 25px;
+  font-size: 17px;
+  color: white;
+}
+.hero-section .img {
+  width: 50%;
+  background: #ccb4cc69;
+  padding: 30px;
+  padding-top: 80px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-section .img img {
+  width: 90%;
+  animation: float 3s infinite ease-in-out; 
+}
+.hero-section button {
+  margin-top: 40px;
+}
+
+
+
+/** DESCRIPTION SECTION **/
+
+.desc-section {
+  background: #ccb4cc;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+.desc-section div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.desc-section h2 {
+  font-family: "Playfair Display";
+  text-align: center;
+  font-size: 80px;
+  font-weight: 800;
+  color: #ccb4cc;
+  margin-bottom: 50px;
+  text-shadow: 
+        -0.01em 0.0075em 0 #ffffff,  
+        0.01em 0.01em 2px #ccb4cc80, 
+        0.02em 0.02em 4px #99739966, 
+        0.03em 0.03em 6px #6633664d,  
+        0.04em 0.04em 8px #33003333;  
+}
+.desc-section p {
+  padding: 40px;
+  line-height: 30px;
+  font-size: 17px;
+  color: white;
+  text-align: center;
+}
+
+
+
+
+/** VERTICAL SLIDES SECTION **/
+
+.drink-section {
+  height: 300vh;
+  width: 100%;
+  position: relative;
+}
+.color-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  transition: opacity 1s ease-in-out;
+}
+.color-section .title {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+.color-section .title span {
+  font-family: "Playfair Display";
+  text-align: center; 
+  font-weight: bold;
+}
+.color-section .title p {
+  width: 50%;
+  font-style: italic;
+  margin-top: 10px;
+  line-height: 20px;
+  font-size: 15px;
+}
+.h1 {
+  color: #b3e689;
+  font-size: 80px;
+  text-shadow: 
+        -0.01em 0.0075em 0 #ffffff,   
+        0.01em 0.01em 2px rgba(179, 230, 137, 0.5),  
+        0.02em 0.02em 4px rgba(143, 184, 109, 0.4),  
+        0.03em 0.03em 6px rgba(107, 138, 81, 0.3),  
+        0.04em 0.04em 8px rgba(71, 92, 54, 0.2); 
+}
+.h2 {
+  color: #ffc188; 
+  font-size: 80px;
+  text-shadow: 
+      -0.01em 0.0075em 0 #ffffff,    
+      0.01em 0.01em 2px rgba(255, 193, 136, 0.5), 
+      0.02em 0.02em 4px rgba(204, 154, 109, 0.4), 
+      0.03em 0.03em 6px rgba(153, 116, 82, 0.3),  
+      0.04em 0.04em 8px rgba(102, 77, 54, 0.2);  
+}
+.h3 {
+  color: #ffa1a1; /* Couleur de base du texte */
+  font-size: 80px;
+  text-shadow: 
+      -0.01em 0.0075em 0 #ffffff,    /* Ombre initiale blanche */
+      0.01em 0.01em 2px rgba(255, 161, 161, 0.5),  /* Teinte claire, plus expansive */
+      0.02em 0.02em 4px rgba(204, 129, 129, 0.4),  /* Teinte légèrement plus foncée */
+      0.03em 0.03em 6px rgba(153, 97, 97, 0.3),    /* Teinte encore plus foncée */
+      0.04em 0.04em 8px rgba(102, 65, 65, 0.2);    /* Teinte la plus foncée, très diffuse */
+}
+.p1 {
+  color: #65b446;
+}
+.p2 {
+  color: #eb892d;
+}
+.p3 {
+  color: #f55d5d;
+}
+.color-section .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.color-section .txt {
+  position: absolute;
+  color: white;
+  font-size: 120px;
+  font-weight: bold;
+  text-transform: uppercase;
+  /*animation: scale 3s infinite ease-in-out;*/
+  z-index: -1;
+}
+.orange {
+  background: #ffc188;
+  z-index: 1;
+}
+.red {
+  background: #ffa1a1;
+  z-index: 2;
+}
+.yellow {
+  background: #b3e689;
+  z-index: 3;
+}
+.bottle {
+  width: 80%;
+  animation: float 3s infinite ease-in-out; 
+}
+
+
+/** BENEFITS SECTION **/
+
+.benefits-section {
+  background: #ccb4cc;
+  padding-top: 50px;
+}
+.benefits-section h2 {
+  font-family: "Playfair Display";
+  text-align: center;
+  font-size: 80px;
+  font-weight: 800;
+  color: #ccb4cc;
+  margin-bottom: 50px;
+  text-shadow: 
+        -0.01em 0.0075em 0 #ffffff,  
+        0.01em 0.01em 2px #ccb4cc80, 
+        0.02em 0.02em 4px #99739966, 
+        0.03em 0.03em 6px #6633664d,  
+        0.04em 0.04em 8px #33003333;  
+}
+.benefits-section .cards {
+  display: flex;
+  justify-content: center;
+  margin: 80px 0;
+}
+.benefits-section .cards .card {
+  width: 20%;
+  text-align: center;
+  margin: 20px;
+}
+.benefits-section .cards .card h3 {
+  color: white;
+  font-family: "Playfair Display";
+  font-weight: 800;
+  font-size: 25px;
+  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.benefits-section .cards .card p {
+  padding :20px;
+  color: white;
+  font-weight: 14px;
+  line-height: 23px;
+}
+.benefits-section .cards .card img {
+  width: 80%;
+  height: 210px;
+  object-fit: cover;
+  animation: float 3s infinite ease-in-out; 
+}
+.benefits-section .cards .card .float {
+  animation-delay: 1s;
+}
+.benefits-section .cards .card .float2 {
+  animation-delay: 1.5s;
+}
+.bann {
+  width: 100%;
+  object-fit: cover;
 }
